@@ -1,0 +1,14 @@
+{
+  "name": "react-learning-june2025",
+  "version": "1.0.0",
+  "description": "This is for learning react",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Harsh Mehra",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.15.2"
+  }
+}
