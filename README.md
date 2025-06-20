@@ -12,9 +12,11 @@
 
       # -D stands for Dev Dependency
 
-- Install React inside our App using npm instead of CDN Link
+- Install React and ReactDOM inside our App using npm instead of CDN Link
 
          npm install react
+
+         npm install react-dom
 
 And then try to run the file using **npx -** npx is used to execute the installed packages.
 
