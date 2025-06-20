@@ -33,3 +33,12 @@ And then try to run the file using **npx -** npx is used to execute the installe
             npx parcel index.html
 
             # Server running at http://localhost:1234
+
+- Configure **App** for older browser versions, so need to make changes inside **package.json**
+
+            / package.json
+
+            "browserlist": [
+                  "last 2 Chrome version",
+                  "last 2 Firefox version"
+            ]
