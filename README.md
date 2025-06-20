@@ -18,6 +18,16 @@
 
          npm install react-dom
 
+Once **react** and **react-dom** install inside the App, import inside the **App.js**
+
+            import React from "react";
+
+            import ReactDOM from "react-dom/clients"
+
+After importing make some changes inside **index.html** file:
+
+            <script type="module" src="App.js"></script>
+
 And then try to run the file using **npx -** npx is used to execute the installed packages.
 
             npx parcel index.html
