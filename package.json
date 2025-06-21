@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "This is for learning react",
   "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
     "test": "jest"
   },
   "author": "Harsh Mehra",
@@ -17,5 +19,5 @@
   "browserslist": [
     "last 2 Chrome version",
     "last 2 Firefox version"
-  ] 
+  ]
 }

@@ -42,3 +42,12 @@ And then try to run the file using **npx -** npx is used to execute the installe
                   "last 2 Chrome version",
                   "last 2 Firefox version"
             ]
+
+- Update **"scripts"** inside **package.json** file -- It will help us to start our app by just typing **npm start** instead of npx parcel index.html
+
+            ◽ package.json
+
+            "scripts": {
+                  "start": "parcel index.html",
+                  "build": "parcel build index.html"
+            }
