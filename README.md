@@ -51,3 +51,15 @@ And then try to run the file using **npx -** npx is used to execute the installe
                   "start": "parcel index.html",
                   "build": "parcel build index.html"
             }
+
+- **React Function Component -** A Functional Component in React is a JavaScript function that returns JSX and follows React’s component conventions, allowing it to be used like a custom HTML tag "< MyComponent />".
+
+            const HeadComponent = () => {
+                  return <h1 className="head"> I am Functional Component </h1>
+            }
+
+            const root = ReactDOM.createRoot(document.getElementById("root")).render(
+                  <>
+                    < HeadComponent />
+                  </>
+            )
