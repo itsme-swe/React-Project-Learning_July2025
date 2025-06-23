@@ -10,7 +10,7 @@ const Title = () => (
 const HeadComponent = function () {
   return (
     <div id="container">
-      <Title />
+      {Title()}
       {heading}
       <h1 className="headComponent">I am functional component 🚀</h1>
     </div>
