@@ -63,3 +63,25 @@ And then try to run the file using **npx -** npx is used to execute the installe
                     < HeadComponent />
                   </>
             )
+
+### Planing before building any app
+
+1. We divided our app into major 3 components
+
+- **Header Component**
+
+  - Logo Component
+  - Nav Bar Component
+
+- **Body Component**
+
+  - SearchBar Component
+  - Restaurant Container
+    - Restaurant Cards
+
+- **Footer Component**
+
+  - Copyright
+  - Links
+  - Address of Company
+  - Contact Us
