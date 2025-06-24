@@ -33,8 +33,10 @@ const RestaurantCard = () => {
       />
       <h4>NIC Ice Creams</h4>
       <h4>Ice Cream, Desserts</h4>
-      <h4>4.5 Stars</h4>
-      <h4>38 minutes</h4>
+      <h4 className="rating-eta">
+        <span className="star-icon">★</span> 4.5{" "}
+        <span className="separator">•</span> 38 mins
+      </h4>
     </div>
   );
 };
@@ -43,6 +45,7 @@ const Body = () => {
     <div className="body">
       <div className="search-bar">Search</div>
       <div className="restaurant-container">
+        <RestaurantCard />
         <RestaurantCard />
       </div>
     </div>

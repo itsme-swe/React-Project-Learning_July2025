@@ -31,25 +31,88 @@
   padding: 10px;
 }
 
-.restaurant-card {
-  flex: 1 1 calc(33.33% - 20px);
-  max-width: 300px;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
+.restaurant-container {
   display: flex;
-  flex-direction: column;
-  transition: transform 0.2s, box-shadow 0.2s;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: flex-start;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+.restaurant-card {
+  width: calc(20% - 20px); /* ~5 per row with gap compensation */
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out;
+  font-family: "Segoe UI", sans-serif;
+  box-sizing: border-box;
 }
 
 .restaurant-card:hover {
+  cursor: pointer;
   transform: translateY(-5px);
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
 }
 
 .res-logo {
   width: 100%;
-  height: 180px;
+  height: 200px;
   object-fit: cover;
+  border-radius: 16px 16px 0 0;
+}
+
+.restaurant-card h4 {
+  margin: 4px 12px;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: #444;
+}
+
+.restaurant-card h4:first-of-type {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #222;
+  letter-spacing: 0.3px;
+}
+
+.restaurant-card h4:nth-of-type(2) {
+  font-size: 0.85rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.restaurant-card h4:nth-of-type(3) {
+  font-size: 0.85rem;
+  color: #2e7d32; /* Green for rating */
+  font-weight: 500;
+}
+
+.restaurant-card h4:last-of-type {
+  font-size: 0.85rem;
+  color: #222;
+  font-weight: 600;
+}
+
+.rating-eta {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #2e7d32; /* Swiggy-like green */
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 4px 12px;
+}
+
+.star-icon {
+  color: #fbbf24; /* Amber/Gold like Swiggy */
+  font-size: 0.9rem;
+  margin-right: 2px;
+}
+
+.separator {
+  color: #888;
+  font-weight: 400;
 }

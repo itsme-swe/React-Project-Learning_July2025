@@ -79,7 +79,6 @@ And then try to run the file using **npx -** npx is used to execute the installe
   - Restaurant Container
     - Restaurant Cards
       - Image of Food Item
-      - Image of Food Item
       - Name of Restaurant
       - Star Rating
       - Cuisines
