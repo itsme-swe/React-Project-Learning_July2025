@@ -23,10 +23,10 @@ export const Body = () => {
     );
   };
 
-  if (listOfRestaurants.length === 0) {
-    return <Shimmer />;
-  }
-  return (
+  // 🌟 clubed conditional rendering with return statement
+  return listOfRestaurants.length === 0 ? (
+    <Shimmer />
+  ) : (
     <div className="body">
       <div className="filter">
         <button
@@ -35,7 +35,7 @@ export const Body = () => {
           onClick={() => {
             const filteredListOfRestaurants = listOfRestaurants.filter(
               (res) => {
-                return res.info.avgRating > 4.5;
+                return res.info.avgRating > 4.2;
               }
             );
             setListOfRestaurants(filteredListOfRestaurants);
