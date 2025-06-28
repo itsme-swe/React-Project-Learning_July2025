@@ -4,6 +4,9 @@ import { Shimmer } from "./Shimmer";
 
 export const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
+  const [filteredRestaurants, setFilteredRestaurants] = useState([]);
+
+  const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
     fetchData();
@@ -21,6 +24,10 @@ export const Body = () => {
     setListOfRestaurants(
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
+
+    setFilteredRestaurants(
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
   };
 
   // 🌟 clubed conditional rendering with return statement
@@ -29,6 +36,32 @@ export const Body = () => {
   ) : (
     <div className="body">
       <div className="filter">
+        <div className="search">
+          <input
+            type="text"
+            className="search-box"
+            value={searchText}
+            onChange={(e) => {
+              setSearchText(e.target.value);
+            }}
+          />
+          <button
+            type="button"
+            onClick={() => {
+              console.log(searchText);
+
+              const filteredRestro = listOfRestaurants.filter((res) => {
+                return res.info.name
+                  .toLowerCase()
+                  .includes(searchText.toLowerCase());
+              });
+
+              setFilteredRestaurants(filteredRestro);
+            }}
+          >
+            Search
+          </button>
+        </div>
         <button
           type="button"
           className="filter-btn"
@@ -46,7 +79,7 @@ export const Body = () => {
       </div>
 
       <div className="restaurant-container">
-        {listOfRestaurants.map((restaurant) => (
+        {filteredRestaurants.map((restaurant) => (
           <RestaurantCard key={restaurant.info.id} restData={restaurant} />
         ))}
       </div>
