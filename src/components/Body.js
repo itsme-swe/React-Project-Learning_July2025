@@ -49,7 +49,6 @@ export const Body = () => {
             type="button"
             onClick={() => {
               console.log(searchText);
-
               const filteredRestro = listOfRestaurants.filter((res) => {
                 return res.info.name
                   .toLowerCase()
