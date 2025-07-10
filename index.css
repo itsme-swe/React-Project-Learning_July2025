@@ -3,9 +3,10 @@
   justify-content: space-between;
   align-items: center;
   padding: 16px 32px;
-  background-color: #f5f5f5; /* Slightly darker than white */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08); /* Soft shadow */
+  background-color: #f5f5f5;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
   height: 80px;
+  overflow: hidden; /* Key to prevent overflow */
   font-family: "Segoe UI", sans-serif;
 }
 
@@ -15,9 +16,11 @@
 }
 
 .logo {
-  width: 120px;
-  height: auto;
+  width: 140px; /* Balanced size */
+  height: 100%;
+  border-radius: 12px; /* Smooth rounded corners */
   object-fit: contain;
+  cursor: pointer;
 }
 
 .nav-items > ul {
@@ -42,22 +45,21 @@
 }
 
 .restaurant-container {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 24px;
-  justify-content: flex-start;
   padding: 1rem;
-  box-sizing: border-box;
 }
 .restaurant-card {
-  width: calc(20% - 20px); /* ~5 per row with gap compensation */
+  display: flex;
+  flex-direction: column;
   background: white;
   border-radius: 16px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   overflow: hidden;
   transition: transform 0.2s ease-in-out;
   font-family: "Segoe UI", sans-serif;
-  box-sizing: border-box;
+  height: 100%;
 }
 
 .restaurant-card:hover {
@@ -68,9 +70,10 @@
 
 .res-logo {
   width: 100%;
-  height: 200px;
+  height: 180px;
   object-fit: cover;
   border-radius: 16px 16px 0 0;
+  box-shadow: inset 0 -1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .restaurant-card h4 {
@@ -251,4 +254,130 @@
 
 .search button:hover {
   background-color: #005ecc;
+}
+
+/* Menu Page Styles */
+.menu {
+  padding: 2rem;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+.menu h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 0.5rem;
+}
+
+.menu h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #555;
+  margin: 0.25rem 0;
+}
+
+.menu h2 {
+  margin-top: 2rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #007aff;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.menu ul li {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  font-size: 1rem;
+  color: #333;
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu ul li:last-child {
+  border-bottom: none;
+}
+
+.menu ul li span {
+  font-weight: 600;
+  color: #222;
+}
+
+/* Mobile Responsive Fix */
+@media (max-width: 768px) {
+  .restaurant-card {
+    width: calc(50% - 20px);
+  }
+
+  .shimmer-card {
+    width: calc(50% - 20px);
+  }
+
+  .menu {
+    padding: 1rem;
+    margin: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .restaurant-card,
+  .shimmer-card {
+    width: 100%;
+  }
+}
+
+.restaurant-container a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  height: 100%;
+}
+
+.about-container {
+  background-color: #eef1f7; /* Light bluish-grey background for contrast */
+  min-height: 100vh;
+  padding: 50px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.about-container h1 {
+  color: #2c3e50;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+.user-card {
+  background-color: #f9f9fc;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+  margin: 20px auto;
+  text-align: left;
+  font-family: Arial, sans-serif;
+  transition: transform 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.user-card h3 {
+  margin: 10px 0;
+  color: #333333;
+  font-weight: 500;
+}
+
+.user-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
