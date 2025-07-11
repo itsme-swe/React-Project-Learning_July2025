@@ -10,9 +10,8 @@ class About extends React.Component {
         <UserClassComponent
           name={"Vasu Mehra"}
           location={"Ajmer, Raj"}
-          contact={"vasu@gmail.com"}
+          email={"vasu@gmail.com"}
         />
-        <User />
       </div>
     );
   }
