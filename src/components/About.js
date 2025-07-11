@@ -1,4 +1,4 @@
-import User from "./User";
+import User from "./UserFunctionalComponent";
 import UserClassComponent from "./UserClassComponent";
 
 export const About = () => {
@@ -7,7 +7,11 @@ export const About = () => {
       <h1>About our F🍛🍛d Standards </h1>
       {User()}
 
-      <UserClassComponent />
+      <UserClassComponent
+        name={"Vasu Mehra"}
+        location={"Ajmer,Raj."}
+        contact={"vasu@gmail.com"}
+      />
     </div>
   );
 };
