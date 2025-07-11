@@ -30,7 +30,7 @@ class UserClassComponent extends React.Component {
         <img id="profile-img" src={avatar_url} alt="" />
         <h3>Name: {name}</h3>
         <h3>Location: {location}</h3>
-        <h3>bio: {bio}</h3>
+        <h3>Bio: {bio}</h3>
         <h4>Card by Class Component</h4>
       </div>
     );
