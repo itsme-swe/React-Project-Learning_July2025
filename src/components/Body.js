@@ -1,4 +1,4 @@
-import { RestaurantCard } from "./RestaurantCard";
+import { RestaurantCard, isPromotedLabelOnRestroCard } from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import { Shimmer } from "./Shimmer";
 import { Link } from "react-router-dom";
@@ -9,6 +9,11 @@ export const Body = () => {
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
 
   const [searchText, setSearchText] = useState("");
+
+  const RestroCardWithPromotedLabel =
+    isPromotedLabelOnRestroCard(RestaurantCard);
+
+  console.log("List of Restaurants: ", listOfRestaurants);
 
   useEffect(() => {
     fetchData();

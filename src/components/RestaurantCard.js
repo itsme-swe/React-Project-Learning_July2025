@@ -23,3 +23,15 @@ export const RestaurantCard = (props) => {
     </div>
   );
 };
+
+// 🔸 Higher Order Component
+export const isPromotedLabelOnRestroCard = (RestaurantCard) => {
+  return (props) => {
+    return (
+      <div>
+        <label>Promoted</label>
+        <RestaurantCard {...props} />
+      </div>
+    );
+  };
+};
