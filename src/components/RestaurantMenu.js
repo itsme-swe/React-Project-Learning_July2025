@@ -1,17 +1,15 @@
 import { Shimmer } from "./Shimmer";
 import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
-import RestaurantAccordian from "./RestaurantAccordian";
+import RestaurantAccordian from "./RestaurantAccordion";
 
 const RestaurantMenu = () => {
   const { restId } = useParams();
-
   const restInfo = useRestaurantMenu(restId);
 
   if (restInfo === null) return <Shimmer />;
 
   const infoCards = restInfo?.cards?.find((card) => card?.card?.card?.info);
-
   const { name, cuisines, costForTwoMessage } =
     infoCards?.card?.card?.info || {};
 
@@ -21,8 +19,7 @@ const RestaurantMenu = () => {
 
   const menuCard = regularCards?.find((c) => c.card?.card?.itemCards)?.card
     ?.card;
-
-  const itemCards = menuCard?.itemCards || [];
+  // const itemCards = menuCard?.itemCards || [];
 
   const categories =
     regularCards?.filter((c) => {
@@ -36,15 +33,27 @@ const RestaurantMenu = () => {
     }) || [];
 
   return (
-    <div className="menu">
-      <h1>{name}</h1>
-      <h3>{cuisines.join(", ")}</h3>
-      <h3>{costForTwoMessage}</h3>
-      <h2>Menu</h2>
+    <div className="max-w-4xl mx-auto p-4 md:p-8">
+      <div className="border-b border-gray-300 pb-4 mb-6">
+        <h1 className="text-3xl font-bold text-black-800 mb-2">{name}</h1>
+        <p className="text-gray-600 text-sm font-bold mb-1">
+          {cuisines.join(", ")}
+        </p>
+        <p className="text-gray-600 text-sm font-bold">{costForTwoMessage}</p>
+      </div>
 
-      {categories.map((ctg) => (
-        <RestaurantAccordian data={ctg.card?.card} />
-      ))}
+      <h2 className="text-2xl font-semibold text-gray-700 mb-4 text-center">
+        ❀࿐ Menu ❀࿐
+      </h2>
+
+      <div className="space-y-4">
+        {categories.map((ctg) => (
+          <RestaurantAccordian
+            key={ctg.card.card.title}
+            data={ctg.card?.card}
+          />
+        ))}
+      </div>
     </div>
   );
 };
