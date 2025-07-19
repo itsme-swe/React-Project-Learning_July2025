@@ -2,7 +2,6 @@ import React from "react";
 import { CDN_URL } from "../utils/constants";
 
 const AccordionItemList = ({ items }) => {
-
   return (
     <div>
       {items.map((item) => (
@@ -26,7 +25,6 @@ const AccordionItemList = ({ items }) => {
             <div className="ml-auto relative w-20 h-24">
               <img
                 src={CDN_URL + item.imageId}
-                alt={item.name}
                 className="w-20 h-20 object-cover rounded-lg"
               />
               <button className="absolute -bottom-1 left-1/2 -translate-x-1/2 bg-white text-green-600 font-semibold text-sm px-2 py-0.5 rounded shadow-md flex items-center gap-1 border border-green-600 hover:bg-green-50 cursor-pointer">

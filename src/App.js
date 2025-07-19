@@ -16,7 +16,7 @@ const InstaMart = lazy(() => import("./components/InstaMart")); // 🔸 this is 
 
 const AppLayout = () => {
   return (
-    <div className="app">
+    <div className="app select-none">
       <Header />
       <Outlet />
     </div>

@@ -27,7 +27,7 @@ const RestaurantAccordion = ({ data }) => {
     <div className="w-full md:w-8/12 mx-auto">
       <div className="bg-white border border-gray-200 shadow-sm rounded-lg p-4 my-4  transition-all duration-200">
         <div
-          className="flex justify-between items-center cursor-pointer"
+          className="flex justify-between items-center cursor-pointer select-none"
           onClick={handleClick}
         >
           <span className="font-semibold text-black-700 text-base md:text-lg">
