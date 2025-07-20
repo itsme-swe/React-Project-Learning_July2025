@@ -1,15 +1,14 @@
 import React, { useState } from "react";
 import AccordionItemList from "./AccordionItemList";
 
-const RestaurantAccordion = ({ data }) => {
-  const [showAccordionList, setShowAccordionList] = useState(false);
-
+const RestaurantAccordion = ({ data, showAccordionList, setShowIndex }) => {
   {
     /* Toggling feature of accordion list */
   }
   const handleClick = () => {
-    setShowAccordionList(!showAccordionList);
+    setShowIndex();
   };
+
   const allItemCards = data?.categories
     ? data.categories.reduce(
         (acc, cat) => acc + (cat.itemCards?.length || 0),

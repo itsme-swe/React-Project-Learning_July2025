@@ -13,8 +13,6 @@ export const Body = () => {
   const RestroCardWithPromotedLabel =
     isPromotedLabelOnRestroCard(RestaurantCard);
 
-  console.log("List of Restaurants: ", listOfRestaurants);
-
   useEffect(() => {
     fetchData();
   }, []);

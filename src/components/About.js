@@ -1,4 +1,3 @@
-import User from "./UserFunctionalComponent";
 import UserClassComponent from "./UserClassComponent";
 import React from "react";
 

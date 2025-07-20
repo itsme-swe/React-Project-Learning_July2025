@@ -2,10 +2,13 @@ import { Shimmer } from "./Shimmer";
 import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 import RestaurantAccordian from "./RestaurantAccordion";
+import { useState } from "react";
 
 const RestaurantMenu = () => {
   const { restId } = useParams();
   const restInfo = useRestaurantMenu(restId);
+
+  const [showIndex, setShowIndex] = useState(null);
 
   if (restInfo === null) return <Shimmer />;
 
@@ -17,9 +20,9 @@ const RestaurantMenu = () => {
     (c) => c.groupedCard?.cardGroupMap?.REGULAR
   )?.groupedCard?.cardGroupMap?.REGULAR?.cards;
 
-  const menuCard = regularCards?.find((c) => c.card?.card?.itemCards)?.card
-    ?.card;
-  // const itemCards = menuCard?.itemCards || [];
+  // const menuCard = regularCards?.find((c) => c.card?.card?.itemCards)?.card
+  //   ?.card;
+  // // const itemCards = menuCard?.itemCards || [];
 
   const categories =
     regularCards?.filter((c) => {
@@ -47,10 +50,13 @@ const RestaurantMenu = () => {
       </h2>
 
       <div className="space-y-4">
-        {categories.map((ctg) => (
+        {categories.map((ctg, index) => (
+          // ⭐ Controlled Component
           <RestaurantAccordian
             key={ctg.card.card.title}
             data={ctg.card?.card}
+            showAccordionList={index === showIndex ? true : false}
+            setShowIndex={() => setShowIndex(index)}
           />
         ))}
       </div>

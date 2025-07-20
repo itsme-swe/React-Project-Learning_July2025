@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 
 import { Header } from "./components/Header";
@@ -9,17 +9,31 @@ import About from "./components/About";
 import { Contact } from "./components/Contact";
 import { Error } from "./components/Error";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
-import RestaurantMenu from "./components/RestaurantMenu";
 import { Shimmer } from "./components/Shimmer";
+import RestaurantMenu from "./components/RestaurantMenu";
+import UserContext from "./utils/UserContext";
 
 const InstaMart = lazy(() => import("./components/InstaMart")); // 🔸 this is how we do code splitting / Or we can say it's an dynamic import
 
 const AppLayout = () => {
+  const [userName, setUserName] = useState();
+
+  useEffect(() => {
+    //🔸 This is an dummy data.. Here we are making an API call and sending username and password
+    const data = {
+      name: "Harsh Mehra",
+      pass: "abc123#05",
+    };
+    setUserName(data.name);
+  }, []);
+
   return (
-    <div className="app select-none">
-      <Header />
-      <Outlet />
-    </div>
+    <UserContext.Provider value={{loggedInUser: userName}}>
+      <div className="app select-none">
+        <Header />
+        <Outlet />
+      </div>
+    </UserContext.Provider>
   );
 };
 
