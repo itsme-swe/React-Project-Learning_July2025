@@ -14,6 +14,7 @@ import RestaurantMenu from "./components/RestaurantMenu";
 import UserContext from "./utils/UserContext";
 import { Provider } from "react-redux";
 import appStore from "./utils/appStore";
+import Cart from "./components/Cart";
 
 const InstaMart = lazy(() => import("./components/InstaMart")); // 🔸 this is how we do code splitting / Or we can say it's an dynamic import
 
@@ -30,7 +31,7 @@ const AppLayout = () => {
   }, []);
 
   return (
-    <Provider store={appStore}>   
+    <Provider store={appStore}>
       <UserContext.Provider value={{ loggedInUser: userName }}>
         <div className="app select-none">
           <Header />
@@ -69,6 +70,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/restaurants/:restId",
         element: <RestaurantMenu />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
       },
     ],
     errorElement: <Error />,

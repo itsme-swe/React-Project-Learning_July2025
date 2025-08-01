@@ -1,7 +1,16 @@
 import React from "react";
 import { CDN_URL } from "../utils/constants";
+import { useDispatch } from "react-redux";
+import { addItem } from "../utils/cartSlice";
 
 const AccordionItemList = ({ items }) => {
+  const dispatch = useDispatch();
+
+  const handleAddItemToStore = (item) => {
+    // 🔸 dispatch an action
+    dispatch(addItem(item));
+  };
+
   return (
     <div>
       {items.map((item) => (
@@ -27,7 +36,10 @@ const AccordionItemList = ({ items }) => {
                 src={CDN_URL + item.imageId}
                 className="w-20 h-20 object-cover rounded-lg"
               />
-              <button className="absolute -bottom-1 left-1/2 -translate-x-1/2 bg-white text-green-600 font-semibold text-sm px-2 py-0.5 rounded shadow-md flex items-center gap-1 border border-green-600 hover:bg-green-50 cursor-pointer">
+              <button
+                className="absolute -bottom-1 left-1/2 -translate-x-1/2 bg-white text-green-600 font-semibold text-sm px-2 py-0.5 rounded shadow-md flex items-center gap-1 border border-green-600 hover:bg-green-50 cursor-pointer"
+                onClick={() => handleAddItemToStore(item)}
+              >
                 <span>Add</span>
                 <span className="text-lg leading-none">+</span>
               </button>
