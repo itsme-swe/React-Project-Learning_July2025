@@ -12,6 +12,8 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import { Shimmer } from "./components/Shimmer";
 import RestaurantMenu from "./components/RestaurantMenu";
 import UserContext from "./utils/UserContext";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
 
 const InstaMart = lazy(() => import("./components/InstaMart")); // 🔸 this is how we do code splitting / Or we can say it's an dynamic import
 
@@ -28,12 +30,14 @@ const AppLayout = () => {
   }, []);
 
   return (
-    <UserContext.Provider value={{loggedInUser: userName}}>
-      <div className="app select-none">
-        <Header />
-        <Outlet />
-      </div>
-    </UserContext.Provider>
+    <Provider store={appStore}>   
+      <UserContext.Provider value={{ loggedInUser: userName }}>
+        <div className="app select-none">
+          <Header />
+          <Outlet />
+        </div>
+      </UserContext.Provider>
+    </Provider>
   );
 };
 
