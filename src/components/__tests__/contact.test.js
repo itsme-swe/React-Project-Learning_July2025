@@ -2,27 +2,31 @@ import { render, screen } from "@testing-library/react";
 import { Contact } from "../Contact";
 import "@testing-library/jest-dom";
 
-test("Should load Contact Us component", () => {
-  render(<Contact />);
+// 🔸 Grouping together all test cases of Contact Us component inside -- describe() function
 
-  const heading = screen.getByRole("heading");
+describe("Contact Us Component test cases", () => {
+  test("Should load Contact Us component", () => {
+    render(<Contact />);
 
-  // Assertion
-  expect(heading).toBeInTheDocument();
-});
+    const heading = screen.getByRole("heading");
 
-test("Should load button inside Contact Component", () => {
-  render(<Contact />);
+    // Assertion
+    expect(heading).toBeInTheDocument();
+  });
 
-  const btn = screen.getByText("Submit"); // even we used getByText() also
+  test("Should load button inside Contact Component", () => {
+    render(<Contact />);
 
-  expect(btn).toBeInTheDocument();
-});
+    const btn = screen.getByText("Submit"); // even we used getByText() also
 
-test("Should load input name inside Contact component", () => {
-  render(<Contact />);
+    expect(btn).toBeInTheDocument();
+  });
 
-  const inputName = screen.getByPlaceholderText("Name");
+  test("Should load input name inside Contact component", () => {
+    render(<Contact />);
 
-  expect(inputName).toBeInTheDocument();
+    const inputName = screen.getByPlaceholderText("Name");
+
+    expect(inputName).toBeInTheDocument();
+  });
 });
