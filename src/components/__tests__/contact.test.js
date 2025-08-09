@@ -14,7 +14,7 @@ describe("Contact Us Component test cases", () => {
     expect(heading).toBeInTheDocument();
   });
 
-  test("Should load button inside Contact Component", () => {
+  it("Should load button inside Contact Component", () => {
     render(<Contact />);
 
     const btn = screen.getByText("Submit"); // even we used getByText() also
