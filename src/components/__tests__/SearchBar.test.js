@@ -6,7 +6,7 @@ import MOCK_DUMMY_DATA from "../mocks/mockDummyFetchData.json";
 import { act } from "react";
 import { BrowserRouter } from "react-router-dom";
 
-it("Should render the Body Component with search button", async () => {
+it("Should search Restaurant List for burger text input", async () => {
   mockFetch(MOCK_DUMMY_DATA);
 
   await act(async () =>
