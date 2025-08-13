@@ -54,6 +54,7 @@ export const Body = () => {
         <div className="search">
           <input
             type="text"
+            data-testid="searchInput"
             className="search-box"
             value={searchText}
             onChange={(e) => {

@@ -1,0 +1,65 @@
+{
+  "info": {
+    "id": "639126",
+    "name": "Subway",
+    "cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2025/6/12/cf4f4ea6-da73-4d34-a10a-5b038636f82d_639126.jpg",
+    "locality": "V.T. Road",
+    "areaName": "Mansarovar",
+    "costForTwo": "₹350 for two",
+    "cuisines": ["sandwich", "Salads", "wrap", "Healthy Food"],
+    "avgRating": 4.2,
+    "parentId": "2",
+    "avgRatingString": "4.2",
+    "totalRatingsString": "2.1K+",
+    "sla": {
+      "deliveryTime": 26,
+      "lastMileTravel": 7.8,
+      "serviceability": "SERVICEABLE",
+      "slaString": "25-30 mins",
+      "lastMileTravelString": "7.8 km",
+      "iconType": "ICON_TYPE_EMPTY"
+    },
+    "availability": {
+      "nextCloseTime": "2025-08-14 02:00:00",
+      "opened": true
+    },
+    "badges": {},
+    "isOpen": true,
+    "type": "F",
+    "badgesV2": {
+      "entityBadges": {
+        "imageBased": {},
+        "textBased": {},
+        "textExtendedBadges": {}
+      }
+    },
+    "aggregatedDiscountInfoV3": {
+      "header": "₹150 OFF",
+      "subHeader": "ABOVE ₹299",
+      "discountTag": "FLAT DEAL"
+    },
+    "differentiatedUi": {
+      "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+      "differentiatedUiMediaDetails": {
+        "lottie": {},
+        "video": {}
+      }
+    },
+    "reviewsSummary": {},
+    "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+    "restaurantOfferPresentationInfo": {},
+    "externalRatings": {
+      "aggregatedRating": {
+        "rating": "--"
+      }
+    },
+    "ratingsDisplayPreference": "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
+  },
+  "analytics": {
+    "context": "seo-data-e194f811-b927-4f72-88e9-0a506f257c70"
+  },
+  "cta": {
+    "link": "https://www.swiggy.com/city/jaipur/subway-v-t-road-mansarovar-rest639126",
+    "type": "WEBLINK"
+  }
+}
